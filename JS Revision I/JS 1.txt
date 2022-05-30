@@ -1,0 +1,92 @@
+1. Hosisting refers to the process where the declarations of the functions, classes and variables are moved to the top, i.e. before the execution starts the functions,classes and variables declartion is done.
+
+2. Scoping is defining the context of execution i.e. in which context values and expressions are visible and can be accessed and executed. Scoping is defined so that the values and expressions can be provided access or restricted to execute at certain parts of the program according to the need.
+
+3. var - var keyword defines the value in function scope and also when defined outside the function as a global declation this attaches the declaration to the window object.
+
+let - let keyword defines the value in block scope and the values are not accessible outside the block scope. When declared globally let keyword does not attach the declared value to the window object.
+
+const - const keyword is similar to the let keyword and the major difference between let and const is that let can be reassigned and const can not be reassigned , i.e. the value once assigned to the const keyword cannot be changed.
+
+4. Two major differences between arrow and Nirmal Functions are :
+
+   I- Syntax is different of arrow function and normal function.
+
+        Normal Function : 
+
+            function abc(a) { 
+                console.log(a)
+            }
+
+        Arrow Function : 
+
+            const abc = (a) => {
+                console.log(a)
+            }
+
+            const abc = a => console.log(a)
+
+    II - Usage of this keyword.
+
+    Normal Function : When this keyword is used in normal functions it return the window object and bind has to be applied to it to point it to the parent object.
+
+    Arrow Functions - In arrow functions when this keyword is used it returns the value of the parent object by default. The arrow functions return the parent object when used a this keyword inside it.
+
+
+5. No, Call apply and bind does not work on the arrow functions as, the arrow functions in javascript does not have there own this keyword and by default points to the parent object. This does not allow the arrow functions to use the call apply and bind.
+
+6. Call -  The call() method in javascript call the value and arguments of a particular function defined with the help of a this keyword and return the values associated with it.
+
+   apply - the apply() method takes the function to be called like in call and also we can pass arguments in form of an array and call the function.
+
+   bind - the bind() method works same as and takes the same values as the apply() method but it does not call but returns a function which when called will return the same value of the function's output which was expected.
+
+7. Closures - When a function wants to access the value of its parent function even after the parent function is done executing is called the closure.
+
+8. Event Bubbling - Lets say we have 3 div's the outermost div is called GrandDiv inside that div is parentDiv and inside that div is the child div. And these div's have onclick functions GrantP(), Parent(), Child() respectively.
+
+   In Event Bubbling when a click is made on the child div which is the innermost div then the events bubble up, i.e. first the Child() will be called, then the Parent() will be called and at the last the GrandP() function will be called.
+
+   This time let's say the click has been made on the Parent div then accordingly first Parent() will be called then the GrandP()n will be called. This is called Event Bubbling.
+
+9. Event Loop - Lets take an example to understand it clearly.
+
+        console.log("hi")
+
+        setTimeout(()=>{
+            console.log("I want to be executed when I want")
+        })
+
+        console.log("Bye")
+
+    In the above example we see that there is console.log("hi") followed by a setTimeout function and then a console.log("bye"). 
+
+    Javascript is a single threaded language, i.e. it can perform a single task at a time. But suppose there are some API request that has to be made and they take all the time in the world to complete. What then? Would we want to let our website run that slow? To Deal with this problem event loop come into picture. 
+
+    Event Loop executes normally and push the task or functions into the stack and whenever it finds asynchronus function it pushes it to the web API's to be executed in our case it is the setTimeout function. When it finds the setTimeout function it sends it to the web API's to be executed and when it is finished executing it then pushed to task queue.
+
+    The event loop keeps on checking with the stack and the event queue and when it finds the stack to be empty it takes the first function from the event queue and pushes it to the stack.
+
+    From this others tasks is completed until the execution of in our case setTimeout function is not completed.The output of our above written code will be:
+
+        -> hi
+        -> bye
+        -> I want to be executed when I want
+
+10. A promise in javascript is an object that return either resolved or reject value according to the condition.
+
+Lets say I gave you a promise that I will come to the party, now if I come to the party the promise is completed that is, it is resolved. But if I don't come to the party the promise is not completed, that is reject in javascript terms.
+
+11. async await - async await makes a normal function asynchronus i.e. async can be applied to a function and await for a task which now will return a promise and when await is resolved async function is called.
+
+12. This keyword - this keyword represents the object in the function in which it is executed. If the function is a regular function then it represents the global object.
+
+13. Classes in js are templates for creating object. Classes encapsulate data with the methods and can be called to make a new instance of that class. The new instance of the class can be used with all the methods that were being encapsulated while making that particular class. Instances of classes are defined with the new values and every instance is different. 
+
+    Getter -  getters are the methods that are used to get tha value of an object.
+    Setters - setters are the methods that are used to set the value of an object.
+
+
+14. Currying - Currying in js is taking a function and dividing the function into different parts to make it more efficient and useful. It can work on function bind and closures.
+
+    f(a*b) -> f(a){f(b)}

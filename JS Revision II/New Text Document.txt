@@ -1,0 +1,43 @@
+1. Call apply bind is requied when we need functions of one object to use in other object.
+
+    Call and apply can call the function inside an object and return the value after  calling that function. But Bind makes a copy of the object function with the values so that it can be called at later time and it will return the value to the that object when called.
+
+2. What is the difference between readFile and readFileSync?
+
+    readFileSync execution is synchronus. This executed line by line and one thing at a time.
+
+    readFile execution is asynchronus. This executes function asynchronusly they function can function in the background and returns as soon as the function is completed. When a function like a callaback takes time. Another function is executed asynchronusly and when the callback is completed that is returned.
+
+3. A process is a global object in node.js. It provides facilities to get process information such as process id, architecture, platform, version, release, etc.It can also be used to kill process, unmask, etc.
+
+4. Node js is a open source development platform for executing javaScript code. Node js is useful for developing application that require a persistent connection from the browser to the server.
+
+5. Browser js is used for client-side application and node js can be used outside browser like on the server side. So we can say node js is used for backend and browser js is used for frontend. Also Browser js is sandboxed for safety purpose and is only limited to the browser. Where as node js can read write on the whole application and can access different native routes in the system.
+
+6. Three different ways to revese a string :
+
+    inbuilt function - str.reverse()
+
+    iteratively: 
+
+        for(var i=0; i<Math.floor(str.length/2); i++) {
+            swap(str[i],str[N-i])
+        }
+
+    recursively: 
+
+        function reverse(str) {
+            if(str==="") {
+                return ""
+            }
+
+            reverse(str.substr(1)) + str.charAt(0)
+        }
+
+7. Shalow equality in two entities like arrays , objects etc  is when corresponding value of both of the objects is strictly equal to the other.
+
+isShallowEqual( { a: 1 }, { a: 1, b: 2 } );
+ false
+ 
+isShallowEqual( { a: 1 }, { a: 1 } );
+true
